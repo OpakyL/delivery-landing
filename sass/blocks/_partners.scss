@@ -1,0 +1,26 @@
+.partners {
+    padding: 70px 0;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        img {
+            border: 2px solid #fff;
+
+            &:hover {
+                cursor: pointer;
+                border-color: $mainRedColor;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .partners {
+        &__wrapper {
+            flex-wrap: wrap;
+        }
+    }
+}

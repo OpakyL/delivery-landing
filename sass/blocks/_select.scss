@@ -1,0 +1,121 @@
+.select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: none;
+
+    &__wrapper {
+        margin-top: 25px;
+        position: relative;
+        user-select: none;
+        width: 100%;
+    }
+
+    &__trigger {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+        background: #9d0000;
+        cursor: pointer;
+        border: none;
+    }
+
+    &__options {
+        position: absolute;
+        display: block;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border: none;
+        background: rgba(#9d0000, 0.9);
+        opacity: 0;
+        transition: all 0.5s;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    &.open {
+        .select__options {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+
+    &__option {
+        position: relative;
+        display: block;
+        padding: 0 20px;
+        border-top: 1px solid #fff;
+        color: #fff;
+
+        line-height: 50px;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(#680101, 0.9);
+        }
+
+        &.selected {
+            color: $mainRedColor;
+            background-color: $mainOrangeColor;
+        }
+    }
+
+    &__arrow {
+        &__wrapper {
+            position: absolute;
+            right: 0;
+            height: 50px;
+            width: 50px;
+            background: rgba($mainOrangeColor, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        position: relative;
+        height: 7px;
+        width: 7px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            transition: all 0.5s;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            transition: all 0.5s;
+        }
+
+        &::before {
+            transform: rotate(-40deg);
+            background-color: $mainRedColor;
+            left: 1px;
+        }
+
+        &::after {
+            transform: rotate(40deg);
+            left: 5px;
+            background-color: $mainRedColor;
+        }
+    }
+}

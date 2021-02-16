@@ -1,0 +1,111 @@
+.search {
+    &__box {
+        width: 150px;
+        height: 50px;
+        position: relative;
+    }
+
+    &__input {
+        position: absolute;
+        box-sizing: border-box;
+        width: 0px;
+        top: 5px;
+        left: 5px;
+        height: 40px;
+        padding: 0 20px;
+        outline: none;
+        font-size: rem(14);
+        border-radius: 50px;
+        color: $mainGrayColor;
+        border: 3px solid $mainRedColor;
+        transition: all 0.8s ease;
+
+        &.active {
+            padding: 0 30px;
+            width: 150px;
+            left: 25px;
+        }
+    }
+
+    &__btn {
+        box-shadow: 0 0 30px rgba($mainRedColor, 0.6);
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: $mainRedColor;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.8s ease;
+
+        img {
+            filter: invert(100%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .search {
+        &__input {
+            &.active {
+                width: 120px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+    .search {
+        &__box {
+            height: 40px;
+            width: 140px;
+        }
+        &__input {
+            height: 30px;
+            padding: 0 10px;
+
+            &.active {
+                width: 120px;
+                left: 15px;
+            }
+        }
+
+        &__btn {
+            box-shadow: 0 0 15px rgba($mainRedColor, 0.6);
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: $tableWidth) {
+    .search {
+        &__box {
+            width: 165px;
+        }
+
+        &__btn {
+            left: 50%;
+            transform: translateX(-50%);
+
+            &.animate {
+                left: 20px;
+            }
+        }
+
+        &__input {
+            left: 50%;
+            transform: translateX(-50%);
+
+            &.active {
+                left: 90px;
+                width: 145px;
+            }
+        }
+    }
+}

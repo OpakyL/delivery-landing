@@ -1,0 +1,152 @@
+.services {
+    padding: 115px 0 95px 0;
+
+    &__title {
+        position: relative;
+        font-size: rem(150);
+        font-weight: 700;
+        color: rgba(#707070, 0.06);
+
+        div {
+            font-size: rem(50);
+            color: $mainRedColor;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5px;
+        }
+    }
+
+    &__wrapper {
+        margin-top: 80px;
+        display: flex;
+        gap: 30px;
+    }
+}
+
+.card {
+    width: calc(100% / 4);
+    &__title {
+        text-transform: uppercase;
+        margin-top: 25px;
+        font-weight: 700;
+        font-size: rem(20);
+        color: $mainRedColor;
+    }
+
+    &__text {
+        margin-top: 10px;
+        color: $mainGrayColor;
+        line-height: 1.6;
+    }
+
+    &__more {
+        display: block;
+        color: #000;
+        font-weight: 700;
+        margin-top: 15px;
+
+        &:hover {
+            color: $mainRedColor;
+        }
+    }
+}
+
+.redcard {
+    width: calc(100% / 4);
+    padding: 30px;
+    background: $mainRedColor;
+
+    color: #fff;
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(20);
+    }
+
+    &__line {
+        height: 2px;
+        width: 70px;
+        background: $mainOrangeColor;
+        margin: 25px 0;
+    }
+
+    &__text {
+    }
+
+    button {
+        width: 100%;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .services {
+        padding: 65px 0 30px 0;
+
+        &__wrapper {
+            margin-top: 60px;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 50px;
+            row-gap: 40px;
+        }
+    }
+
+    .card {
+        width: calc(100% / 3);
+    }
+
+    .redcard {
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+    .services {
+        padding: 40px 0 30px 0;
+
+        &__wrapper {
+            margin-top: 40px;
+            column-gap: 30px;
+        }
+    }
+    .card {
+        width: calc((100% / 2) - 30px);
+    }
+
+    .redcard {
+        width: calc((100% / 2) - 30px);
+    }
+}
+
+@media screen and (max-width: $tableWidth) {
+    .services {
+        padding: 40px 0 30px 0;
+        &__title {
+            margin: 40px 0 70px 0;
+            font-size: 0;
+        }
+
+        &__wrapper {
+            gap: 0;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+    .card {
+        text-align: center;
+        width: 100%;
+
+        &__text {
+            margin: 0 auto;
+            width: 70%;
+        }
+    }
+
+    .redcard {
+        margin: 0 auto;
+        width: 75vw;
+    }
+}

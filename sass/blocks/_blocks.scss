@@ -1,0 +1,95 @@
+.arrow {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+
+    border-left: 5px solid $mainRedColor;
+
+    &-yellow {
+        margin-left: 0;
+        margin-right: 4px;
+        border-left-color: $mainOrangeColor;
+    }
+
+    &-big {
+        margin-left: 2px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+
+        border-left: 15px solid $mainRedColor;
+    }
+}
+
+.button {
+    font-size: rem(12);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    padding: 15px 50px;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+
+    &:hover {
+        border-color: $mainGrayColor;
+        cursor: pointer;
+    }
+
+    transition: border-color 0.1s;
+
+    &:active {
+        border-color: $mainRedColor;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &-yellow {
+        padding: 15px 40px;
+        background: $mainOrangeColor;
+        color: $mainRedColor;
+        border-color: $mainOrangeColor;
+        box-shadow: 0 0 40px rgba($mainOrangeColor, 0.5);
+
+        &:hover {
+            border-color: #fff;
+        }
+
+        &:active {
+            border-color: $mainRedColor;
+        }
+    }
+
+    &-red {
+        background-color: #a00000;
+        color: #fff;
+        border-color: #a00000;
+        height: 50px;
+
+        &:hover {
+            border-color: #fff;
+        }
+
+        &:active {
+            border-color: $mainRedColor;
+        }
+    }
+}
+
+@media screen and (max-width: $tableWidth) {
+    .button {
+        padding: 15px 40px;
+
+        &-yellow {
+            padding: 15px 30px;
+        }
+    }
+}

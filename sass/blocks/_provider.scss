@@ -1,0 +1,160 @@
+.provider {
+    background-image: url("../../img/provider/bg.jpg");
+    background-position: center;
+    min-height: 700px;
+    position: relative;
+
+    padding-top: 130px;
+
+    &__title {
+        font-size: rem(50);
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &__button {
+        position: relative;
+        margin: 0 auto;
+        margin-top: 45px;
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        background-color: $mainOrangeColor;
+        box-shadow: 0 0 40px rgba($mainOrangeColor, 0.5);
+
+        div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__kostyl {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__scroll {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        top: 198px;
+
+    }
+    &__card {
+        width: 370px;
+        display: inline-block;
+
+        &__title {
+            color: $mainRedColor;
+            font-weight: 700;
+            font-size: rem(20);
+        }
+
+        &__wrapper {
+            padding: 25px;
+            box-shadow: 0 10px 10px 0 rgba(#000, 0.1);
+        }
+
+        &__list {
+            margin-top: 20px;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            div {
+                color: $mainGrayColor;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .provider {
+        padding-top: 90px;
+
+        &__title {
+            text-align: center;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        &__card {
+            &:last-child {
+                margin-right: 50px;
+            }
+        }
+
+        &__scroll {
+            overflow: hidden;
+            overflow-x: scroll;
+            top: 139px;
+
+            padding: 50px;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: $mainOrangeColor;
+            }
+        }
+    }
+}
+@media screen and (max-width: $smDesktopWidth) {
+    .provider {
+        padding-top: 70px;
+
+        &__scroll {
+            top: 115px;
+        }
+    }
+}
+@media screen and (max-width: $tableWidth) {
+    .provider {
+        &__title {
+            max-width: 590px;
+        }
+
+        &__scroll {
+            top: 127px;
+        }
+    }
+}
+@media screen and (max-width: $phoneWidth) {
+    .provider {
+        padding-top: 50px;
+
+        &__title {
+            padding: 0;
+            font-size: rem(36);
+        }
+
+        &__card {
+            width: 280px;
+            img {
+                width: 280px;
+            }
+        }
+
+        &__scroll {
+            top: 235px;
+        }
+    }
+}

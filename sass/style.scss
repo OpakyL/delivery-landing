@@ -1,0 +1,56 @@
+@import "libs/reset";
+
+@import "base/variables";
+@import "base/mixins";
+@import "base/fonts";
+
+html {
+    font-family: $mainFontFamily;
+    font-weight: $mainFontWeight;
+    font-size: $mainFontSize;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 15px;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+        font-size: 14px;
+    }
+    @media screen and (max-width: $tableWidth) {
+        font-size: 13px;
+    }
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $desktopWidth) {
+        padding: 0 50px;
+        max-width: $smDesktopWidth;
+    }
+
+    @media screen and (max-width: $smDesktopWidth) {
+        max-width: $tableWidth;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        width: 100%;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        padding: 0 20px;
+    }
+}
+
+@import "blocks/blocks";
+@import "blocks/search";
+@import "blocks/header";
+@import "blocks/hamburger";
+@import "blocks/speed";
+@import "blocks/services";
+@import "blocks/select";
+@import "blocks/provider";
+@import "blocks/options";
+@import "blocks/excellence";
+@import "blocks/partners";
+@import "blocks/footer";

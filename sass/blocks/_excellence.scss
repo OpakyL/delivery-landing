@@ -1,0 +1,46 @@
+.excellence {
+    background: $mainRedColor;
+    min-height: 350px;
+    padding: 90px 0;
+
+    color: #fff;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left {
+        max-width: 740px;
+    }
+
+    &__title {
+        font-size: rem(30);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__text {
+        margin-top: 20px;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .excellence {
+        &__left {
+            max-width: 500px;
+        }
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .excellence {
+        &__wrapper {
+            flex-direction: column;
+            gap: 40px;
+            align-items: flex-start;
+        }
+    }
+}

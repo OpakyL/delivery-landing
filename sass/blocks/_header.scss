@@ -1,0 +1,126 @@
+.header {
+    width: 100%;
+    background: $mainOrangeColor;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__links {
+        display: flex;
+        gap: 30px;
+        a {
+            padding: 55px 15px;
+            text-transform: uppercase;
+            color: $mainRedColor;
+            font-size: rem(14);
+
+            &:hover {
+                padding-bottom: 51px;
+                border-bottom: 4px solid $mainRedColor;
+            }
+        }
+    }
+
+    &__search {
+        width: 50px;
+        height: 50px;
+        background: $mainRedColor;
+        border-radius: 100%;
+    }
+}
+
+@media screen and (max-width: $desktopWidth) {
+    .header {
+        &__links {
+            gap: 15px;
+            a {
+                padding: 40px 10px;
+
+                &:hover {
+                    padding-bottom: 36px;
+                    border-bottom: 4px solid $mainRedColor;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+    .header {
+        &__logo {
+            width: 130px;
+        }
+
+        &__links {
+            gap: 10px;
+            a {
+                padding: 35px 5px;
+
+                &:hover {
+                    padding-bottom: 31px;
+                    border-bottom: 4px solid $mainRedColor;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tableWidth) {
+    .header {
+        background: none;
+
+        &__wrapper {
+            position: fixed;
+            z-index: 5;
+            left: -50vw;
+            width: 50vw;
+            background: $mainOrangeColor;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: space-around;
+
+            transition: left 0.7s;
+
+            &-active {
+                left: 0;
+            }
+        }
+
+        &__links {
+            text-align: center;
+            flex-direction: column;
+
+            a {
+                padding: 15px;
+                border: 1px solid rgba($mainRedColor, 0.2);
+                border-radius: 50px;
+
+                &:hover {
+                    padding: 15px;
+                    border: 1px solid rgba($mainRedColor, 0.2);
+                }
+                transition: border-color 0.1s;
+
+                &:active {
+                    border-color: $mainRedColor;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $phoneWidth) {
+    .header {
+        &__wrapper {
+            width: 100vw;
+            left: -100vw;
+
+            &-active {
+                left: 0;
+            }
+        }
+    }
+}
